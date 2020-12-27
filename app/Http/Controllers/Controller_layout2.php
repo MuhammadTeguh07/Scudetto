@@ -18,7 +18,7 @@ class Controller_layout2 extends Controller
             return redirect('/login');
         }
         else{
-            return view ('/layout2/body');
+            return view ('/admin/body');
         }
     }
 

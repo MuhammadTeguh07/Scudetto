@@ -1,5 +1,5 @@
 <!doctype html> 
-@extends('layout2/sidebar')
+@extends('admin/sidebar')
 
 @section('konten')
 <div class="right_col" role="main" style="min-height: 1000px;">
@@ -71,24 +71,15 @@
               </button>
               <div class="clearfix"></div>
             </div>
-            <div class="item form-group" style="margin-right:-40px; margin-bottom:50px;">
-              <label class="control-label col-md-1 col-sm-3 col-xs-12" style="text-align:left; margin-right:-100px; margin-top:6px;" >User</label>
-              <div class="col-md-4" style="margin-left:60px;">
-                <select name="user"  required class="form-control mb-3 mb-3">
-                @foreach($user as $u)
-                  @if($u->status_user == "0")
-                      <option name="user" value="{{ $u->id_user }}">{{ $u->nama_user }}</option>
-                  @endif
-                @endforeach
-                </select>
-              </div>
-            </div>
             <div class="x_content">
               @if ($message = Session::get('insert'))
                 <div class="alert alert-success alert-dismissible fade in" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                   <strong>{{ $message }}</strong>
                 </div>
+              @endif
+              @if(\Session::has('id'))
+                <input type="hidden" value="{{ Session::get('id') }}" id="user" name="user">
               @endif
               <table class="table table-bordered" id="table">
                 <thead>
@@ -155,8 +146,8 @@
 
       cel_1.innerHTML = '<input type="hidden" readonly style="background:none; outline:none; border:none; width:100px; height:20px; text-align:center;" name="id['+barang[i]["id_produk"]+']" value="'+barang[i]["id_produk"]+'">'+barang[i]["nama_produk"];
       cel_2.innerHTML = '<input id="harga'+barang[i]["id_produk"]+'" type="number" readonly style="background:none; outline:none; border:none; height:20px;" name="harga['+barang[i]["id_produk"]+']" value="'+barang[i]["harga_produk"]+'">';
-      cel_3.innerHTML = '<input id="qty'+barang[i]["id_produk"]+'" type="number" style="background:none; outline:none; border:none; width:50px; height:20px;" name="qty['+barang[i]["id_produk"]+']" value="1" onfocus="select()" oninput="perkalian(\''+barang[i]["id_produk"]+'\')">';
-      cel_4.innerHTML = '<input type="number" name="diskon['+barang[i]["id_produk"]+']" oninput="perkalian(\''+barang[i]["id_produk"]+'\')"  value="0" id="diskon'+barang[i]["id_produk"]+'">';	
+      cel_3.innerHTML = '<input id="qty'+barang[i]["id_produk"]+'" type="number" style="width:50px;" name="qty['+barang[i]["id_produk"]+']" value="1" onfocus="select()" oninput="perkalian(\''+barang[i]["id_produk"]+'\')">';
+      cel_4.innerHTML = '<input type="number" name="diskon['+barang[i]["id_produk"]+']" oninput="perkalian(\''+barang[i]["id_produk"]+'\')"  value="0" onfocus="select()" id="diskon'+barang[i]["id_produk"]+'">';	
       cel_5.innerHTML = '<input id="subtotal'+barang[i]["id_produk"]+'" class="subtotal" type="number" readonly style="background:none; outline:none; border:none; height:20px;" name="subtotal['+barang[i]["id_produk"]+']" value="'+barang[i]["harga_produk"]+'">';
       cel_6.innerHTML = '<center><button onclick="hapusEl(\''+idrow+'\')" class="btn btn-secondary" style="background:transparent; border:none; color: black;" type="button"><i class="fa fa-times"></i></button></center>';
       total();

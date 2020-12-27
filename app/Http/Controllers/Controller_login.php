@@ -35,6 +35,7 @@ class Controller_login extends Controller
                 Session::put('nama',$data->nama_user);
                 Session::put('jk',$data->jk_user);
                 Session::put('jabatan',$data->jabatan_user);
+                Session::put('id',$data->id_user);                
                 Session::put('/login',TRUE);
                 if($data->jk_user == "0"){   
                     Session::put('laki',TRUE); 

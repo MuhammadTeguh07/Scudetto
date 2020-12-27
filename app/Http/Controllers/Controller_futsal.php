@@ -19,7 +19,7 @@ class Controller_futsal extends Controller
             return redirect('/login');
         }
         else{
-            $produk = DB::table('produk')
+            $produk = DB::table('produk') 
             ->join('kategori', 'produk.id_kategori', '=', 'kategori.id_kategori')
             ->join('katalog', 'kategori.id_katalog', '=', 'katalog.id_katalog')->get();
             $kategori = DB::table('kategori')->orderby('id_kategori', 'asc')->get();

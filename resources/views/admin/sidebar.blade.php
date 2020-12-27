@@ -74,7 +74,7 @@
             <!-- top navigation -->
                 @include('admin/header')
             <!-- /top navigation -->
-
+ 
             <!-- page content -->
                 @yield('konten')
             <!-- /page content -->

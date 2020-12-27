@@ -23,8 +23,16 @@ Route::post('/login/cek','Controller_login@cek');
 //Logout
 Route::get('/logout','Controller_login@logout');
 
+
+
 //Layout1
 Route::get('/home','Controller_layout@index');
+
+//Pilih
+Route::get('/pilihKatalog/{id}','Controller_pilihKatalog@index');
+Route::get('/pilihProduk/{id}','Controller_pilihProduk@index');
+
+
 
 //Layout2
 Route::get('/dashboard','Controller_layout2@index');

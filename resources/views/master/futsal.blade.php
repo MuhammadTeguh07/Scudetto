@@ -1,5 +1,5 @@
 <!doctype html> 
-@extends('layout2/sidebar')
+@extends('admin/sidebar')
 
 @section('konten')
 <div class="right_col" role="main" style="min-height: 1000px;">
@@ -279,7 +279,7 @@
                                                             <td>
                                                                 @if($p->status_produk == "0")
                                                                     Aktif
-                                                                @else
+                                                                @else 
                                                                     Tidak Aktif 
                                                                 @endif
                                                             </td>

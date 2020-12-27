@@ -15,7 +15,7 @@ class Controller_layout extends Controller
     public function index()
     {
         $katalog = DB::table('katalog')->orderby('id_katalog', 'asc')->get();
-        return view('/layout/sidebar', ['katalog' => $katalog]);
+        return view('/layout/body', ['katalog' => $katalog]);
     }
 
     /**

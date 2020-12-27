@@ -17,7 +17,7 @@ File: Layout CSS
 .row1, .row1 a{}
 .row2, .row2 a{}
 .row3, .row3 a{}
-.row4, .row4 a{}
+.row4, .row4 a{ text-decoration:none; color:#FFF;}
 .row5, .row5 a{}
 
 
@@ -31,7 +31,7 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:70px 0 120px;}
+
 
 #pageintro li article{display:block; max-width:75%; margin:0 auto; text-align:center;}
 #pageintro li article *{margin:0;}
@@ -160,7 +160,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav li{display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
 #mainav li:last-child{margin-right:0;}
 #mainav li li{width:100%; margin:0;}
-#mainav li a{display:block; padding:30px 0;}
+#mainav li a{display:block; padding:30px 0; text-decoration:none;}
 #mainav li li a{border:solid; border-width:0 0 1px 0;}
 #mainav .drop{padding-left:15px;}
 #mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
@@ -282,7 +282,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#D55A77;}
 
 
 /* Header */
-#header #logo a{color:inherit;}
+#header #logo a{color:inherit; text-decoration:none;}
 
 
 /* Page Intro */
@@ -324,7 +324,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#D55A77;}
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
 .container .sidebar nav a:hover{color:#D55A77;}
 
-.pagination a, .pagination strong{border-color:#D7D7D7;}
+.pagination a, .pagination strong{border-color:#D7D7D7; text-decoration:none; color:#000;}
 .pagination .current *{color:#FFFFFF; background-color:#D55A77;}
 
 #backtotop{color:#FFFFFF; background-color:#D55A77;}
